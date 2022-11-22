@@ -15,7 +15,7 @@ export const getCartItems = createAsyncThunk(
     }
   }
 );
-
+// here we can define initial state
 const initialState = {
   cartItems: [],
   amount: 1,
