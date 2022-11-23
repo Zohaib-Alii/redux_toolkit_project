@@ -11,7 +11,7 @@ export const getCartItems = createAsyncThunk(
       console.log(data, "res json here get cart itemss func");
       return data;
     } catch (error) {
-      return console.log(error, "get cart items error");
+      return console.log(error, "get cart items error asdas");
     }
   }
 );
@@ -21,11 +21,15 @@ const initialState = {
   amount: 1,
   total: 0,
   isLoading: true,
+  isRender: true,
 };
 const cartSlice = createSlice({
   name: "cart",
   initialState,
   reducers: {
+    stateChange: (state) => {
+      state.isRender = false;
+    },
     clearCart: (state) => {
       state.cartItems = [];
     },
@@ -51,15 +55,6 @@ const cartSlice = createSlice({
       state.cartItems.map((item) => {
         amount += item.amount;
         total += item.amount * item.price;
-        console.log(
-          item.amount,
-          item.price,
-          "price",
-          total,
-          "total",
-          amount,
-          "amount"
-        );
       });
       state.amount = amount;
       state.total = total;
@@ -95,6 +90,12 @@ const cartSlice = createSlice({
   // },
 });
 console.log(cartSlice, "CartItems");
-export const { clearCart, removeItem, increase, decrease, calculateTotals } =
-  cartSlice.actions;
+export const {
+  stateChange,
+  clearCart,
+  removeItem,
+  increase,
+  decrease,
+  calculateTotals,
+} = cartSlice.actions;
 export default cartSlice.reducer;
