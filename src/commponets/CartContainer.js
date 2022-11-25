@@ -38,7 +38,7 @@ const CartContainer = () => {
       <section className='cart'>
         <header>
           <button onClick={() => dispatch(test())}>test another slice </button>
-          <h2>your bag</h2>
+          <h2>your bag here</h2>
         </header>
         <div>
           {cartItems.map((item) => {
