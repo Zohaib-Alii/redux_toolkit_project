@@ -57,12 +57,10 @@ const CartContainer = () => {
             onClick={() => dispatch(modelOpen())}>
             clear cart
           </button>
-          <button
-            className='btn clear-btn'
-            onClick={() => dispatch(modelOpen())}>
-            Add cart
-          </button>
         </footer>
+        <button className='btn clear-btn' onClick={() => dispatch(modelOpen())}>
+          remove things check
+        </button>
       </section>
     </div>
   );
