@@ -49,6 +49,12 @@ const cartSlice = createSlice({
       );
       cartItem.amount -= 1;
     },
+    test: (state, action) => {
+      const cartItem = state.cartItems.find(
+        (item) => item.id === action.payload
+      );
+      cartItem.amount -= 1;
+    },
     calculateTotals: (state) => {
       let amount = 0;
       let total = 0;
