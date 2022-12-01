@@ -49,7 +49,7 @@ const cartSlice = createSlice({
       );
       cartItem.amount -= 1;
     },
-    test: (state, action) => {
+    decrease: (state, action) => {
       const cartItem = state.cartItems.find(
         (item) => item.id === action.payload
       );
